@@ -34,13 +34,15 @@ body {
 
 /* --- KITOB KONTEYNERI --- */
 .book-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: -60px;
-    transition: all 0.5s ease;
-    z-index: 5;
+    margin-top: -120px; 
+    padding-bottom: 50px; /* Pastda bo'sh joy qoldiramiz */
+}
+
+@media (max-width: 480px) {
+    .book-container {
+        transform: scale(0.8); /* Telefon ekraniga sig'ishi uchun */
+        margin-top: -150px;
+    }
 }
 
 .book {
@@ -110,21 +112,27 @@ img {
 .back { transform: rotateY(180deg); }
 
 /* --- IXCHAM VA DUMALOQ PLEYER (WIDGET STYLE) --- */
+/* Pleyerni yanada ixcham qilish */
 .player-container {
     position: fixed;
-    bottom: 30px;
-    width: 90%;
-    max-width: 360px;
-    background: rgba(0, 0, 0, 0.5); /* Yarim shaffof qora */
+    bottom: 15px; /* Pastga yaqinroq */
+    width: 85%;
+    max-width: 310px; /* Eniga kichiklashtirildi */
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50px;
-    padding: 12px 20px;
-    color: white;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+    border-radius: 35px;
+    padding: 10px 18px; /* Ichki bo'shliq kamaytirildi */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     z-index: 1000;
 }
+
+.album-art img {
+    width: 50px; height: 50px; /* Disk biroz kichraytirildi */
+}
+
+.song-details h2 { font-size: 13px; }
+.song-details p { font-size: 10px; }
+
 
 .player-content {
     display: flex;
